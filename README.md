@@ -4,6 +4,8 @@ Tool for separting all the molecules contained in the same xyz file.
 
 Install
 -------
+Catch the branch v1.0.
+The master branch is under development.
 Just make sure to have numpy installed.
 
 Run
