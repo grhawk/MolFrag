@@ -6,6 +6,7 @@ Install
 -------
 Catch the branch v1.0.
 The master branch is under development.
+    git clone  -d 1 -b v1.0 git@github.com:grhawk/MolFrag.git
 Just make sure to have numpy installed.
 
 Run
