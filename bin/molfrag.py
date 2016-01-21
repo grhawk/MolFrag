@@ -66,6 +66,10 @@ def main():
 #        fname = '%s_mono%i.xyz'%(args.out_prefix, m+1)
         #        writexyz(fname, monomer, cstring)
         print 'Mon %i molecular mass: %12.6f' % tuple([i,krn.structparams.molecular_mass(monomers[i],atomnos)])
+        indexes = ''
+        for index in sorted(monomers[i]):
+            indexes += '%i ' % index 
+        print 'Mon %i atom indexes:' % i, indexes
         i += 1
 
     # print "Mon 1 molecular mass: ",
