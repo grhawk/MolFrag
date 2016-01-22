@@ -68,7 +68,8 @@ def main():
         print 'Mon %i molecular mass: %12.6f' % tuple([i,krn.structparams.molecular_mass(monomers[i],atomnos)])
         indexes = ''
         for index in sorted(monomers[i]):
-            indexes += '%i ' % index 
+            if not(args.hide_h and atomnos[index].upper() == 'H'):
+                indexes += '%i ' % index 
         print 'Mon %i atom indexes:' % i, indexes
         i += 1
 
@@ -113,6 +114,12 @@ def __parser():
                         metavar = '<FLOAT>',
                         default = '1.05',
                         help = 'select a multiplicating factor to for the covalent radii')
+
+    parser.add_argument('-hh','--hide-hydrogen',
+                        action = 'store_true',
+                        dest = 'hide_h',
+                        default = False,
+                        help = 'if present the hydrogen indexes will be skipped')
 
     parser.add_argument('xyzfile',
                         action = 'store',
